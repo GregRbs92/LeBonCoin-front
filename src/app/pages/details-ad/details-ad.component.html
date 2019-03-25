@@ -1,0 +1,22 @@
+<div id="main" *ngIf="ad">
+  <h1>{{ ad.title }}</h1>
+  <h2><i [class]="getIcon()"></i></h2>
+  <p class="additional-fields">
+    <span *ngIf="ad.contractType">
+      <strong>Contract Type:</strong> {{ ad.contractType }}
+    </span>
+    <span *ngIf="ad.fuelType">
+      <strong>Fuel Type:</strong> {{ ad.fuelType }}
+    </span>
+    <span *ngIf="ad.surface">
+      <strong>Surface:</strong> {{ ad.surface }}
+    </span>
+    <span *ngIf="ad.salary">
+      <strong>Salary:</strong> {{ ad.salary }}
+    </span>
+    <span *ngIf="ad.price">
+      <strong>Price:</strong> {{ ad.price }}
+    </span>
+  </p>
+  <p class="content">{{ ad.content }}</p>
+</div>

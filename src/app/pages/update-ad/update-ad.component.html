@@ -1,0 +1,21 @@
+<div id="main">
+  <form [formGroup]="form" (ngSubmit)="updateAd()" *ngIf="form">
+    <h1>Update an ad</h1>
+    <input type="text" placeholder="Title" formControlName="title">
+    <input type="text" placeholder="Content" formControlName="content">
+    <ng-container *ngIf="ad.category.name === 'job'">
+      <input type="text" placeholder="Contract Type" formControlName="contractType">
+      <input type="text" placeholder="Salary" formControlName="salary">
+    </ng-container>
+    <ng-container *ngIf="ad.category.name === 'vehicle'">
+      <input type="text" placeholder="Fuel Type" formControlName="fuelType">
+      <input type="text" placeholder="Price" formControlName="price">
+    </ng-container>
+    <ng-container *ngIf="ad.category.name === 'property'">
+      <input type="text" placeholder="Surface" formControlName="surface">
+      <input type="text" placeholder="Price" formControlName="price">
+    </ng-container>
+
+    <button type="submit">Update</button>
+  </form>
+</div>

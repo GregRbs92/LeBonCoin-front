@@ -1,0 +1,28 @@
+<div id="main">
+  <form [formGroup]="form" (ngSubmit)="createAd()">
+    <h1>Create a new ad</h1>
+    <input type="text" placeholder="Title" formControlName="title">
+    <input type="text" placeholder="Content" formControlName="content">
+    <select formControlName="category">
+      <option value="" disabled selected>Category</option>
+      <option value="job">Job</option>
+      <option value="vehicle">Vehicle</option>
+      <option value="property">Property</option>
+      <option value="other">Other</option>
+    </select>
+    <ng-container *ngIf="category.value === 'job'">
+      <input type="text" placeholder="Contract Type" formControlName="contractType">
+      <input type="text" placeholder="Salary" formControlName="salary">
+    </ng-container>
+    <ng-container *ngIf="category.value === 'vehicle'">
+      <input type="text" placeholder="Fuel Type" formControlName="fuelType">
+      <input type="text" placeholder="Price" formControlName="price">
+    </ng-container>
+    <ng-container *ngIf="category.value === 'property'">
+      <input type="text" placeholder="Surface" formControlName="surface">
+      <input type="text" placeholder="Price" formControlName="price">
+    </ng-container>
+
+    <button type="submit">Create</button>
+  </form>
+</div>

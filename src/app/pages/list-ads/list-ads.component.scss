@@ -1,0 +1,68 @@
+#main {
+  padding: 15px;
+
+  #title {
+    text-align: center;
+  }
+
+  table {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+
+    tr {
+      border-bottom: #999;
+
+      .category-icon {
+        width: 100px;
+        text-align: center;
+        font-size: 2.5em;
+      }
+      .ad-title {
+        font-size: 1.2em;
+        margin: 0;
+        margin-bottom: 3px;
+        letter-spacing: 1px;
+      }
+      .ad-infos {
+        font-size: .9em;
+        margin: 0;
+        letter-spacing: 1px;
+
+        span {
+          margin-right: 30px;
+
+          &:last-of-type {
+            margin-right: 0;
+          }
+        }
+      }
+      .ad-content {
+        font-size: .8em;
+        letter-spacing: 1px;
+        color: #555;
+      }
+      .ad-actions {
+        a {
+          padding: 7px;
+          background-color: #002;
+          color: #fff;
+          border-radius: 5px;
+          margin-right: 10px;
+          cursor: pointer;
+
+          &.ad-details {
+            border: 1px solid #002;
+            background: none;
+            color: #002;
+          }
+
+          &.ad-delete {
+            background-color: #800;
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}

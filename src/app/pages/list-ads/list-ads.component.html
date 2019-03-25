@@ -1,0 +1,35 @@
+<div id="main">
+  <h1 id="title">Ads</h1>
+  <h3 *ngIf="ads.length === 0">No ads</h3>
+  <table *ngIf="ads.length > 0">
+    <tr *ngFor="let ad of ads">
+      <td class="category-icon">
+        <i class="fas fa-suitcase" *ngIf="ad.category.name === 'job'"></i>
+        <i class="fas fa-car" *ngIf="ad.category.name === 'vehicle'"></i>
+        <i class="fas fa-home" *ngIf="ad.category.name === 'property'"></i>
+        <i class="fas fa-ad" *ngIf="ad.category.name === 'other'"></i>
+      </td>
+      <td>
+        <h1 class="ad-title">{{ ad.title }}</h1>
+        <p class="ad-infos" *ngIf="ad.category.name === 'job'">
+          <span><strong>Contract Type:</strong> {{ ad.contractType }}</span>
+          <span><strong>Salary:</strong> {{ ad.salary }}</span>
+        </p>
+        <p class="ad-infos" *ngIf="ad.category.name === 'vehicle'">
+          <span><strong>Fuel Type:</strong> {{ ad.fuelType }}</span>
+          <span><strong>Price:</strong> {{ ad.price }}</span>
+        </p>
+        <p class="ad-infos" *ngIf="ad.category.name === 'property'">
+          <span><strong>Surface:</strong> {{ ad.surface }}</span>
+          <span><strong>Price:</strong> {{ ad.price }}</span>
+        </p>
+        <p class="ad-content">{{ ad.content }}</p>
+      </td>
+      <td class="ad-actions">
+        <a routerLink="/ads/{{ ad.id }}" class="ad-details">Details</a>
+        <a routerLink="/ads/{{ ad.id }}/update" class="ad-update">Update</a>
+        <a class="ad-delete" (click)="deleteAd(ad.id)">Delete</a>
+      </td>
+    </tr>
+  </table>
+</div>
